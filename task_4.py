@@ -1,11 +1,4 @@
-my_str = input("введите строку: ")
-my_word = []
-num = 1
-for el in range(my_str.count(' ') + 1):
-    my_word = my_str.split()
-    if len(str(my_word)) <= 10:
-        print(f" {num} {my_word [el]}")
-        num += 1
-    else:
-        print(f" {num} {my_word [el] [0:10]}")
-        num += 1
+rus_dict = {"One,": "Один", "Two": "Два", "Three": "Три", "Four": "Четыре"}
+with open('task_4.txt', 'w', encoding='utf-8') as nf:
+    with open('task_4.txt', 'r', encoding='utf-8') as mf:
+        nf.write(str([line.replace(line.split()[0], rus_dict.get(line.split()[0])) for line in mf]))

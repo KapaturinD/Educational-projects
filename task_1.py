@@ -1,10 +1,6 @@
-my_list = [12, None, -77, 'True', list, 9.5]
-
-
-def my_type(el):
-    for el in range(len(my_list)):
-        print(type(my_list[el]))
-    return
-
-
-my_type(my_list)
+with open('task_1.txt', 'w', encoding='utf-8') as f:
+    while True:
+        line = input('Введите новую строку -')
+        if not line:
+            break
+        f.write(f'{line}\n')
