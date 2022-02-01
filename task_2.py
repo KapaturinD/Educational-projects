@@ -1,3 +1,17 @@
-with open('task_2.txt', 'r', encoding='utf-8') as f:
-    usefulness = [f'{num}. {"".join(line.split())} - {len(line.split())} слов ' for num, line in enumerate(f, 1)]
-    print(*usefulness, f'всего строк - {len(usefulness)}.', sep='\n')
+class Road:
+    def __init__(self, _length, _width):
+        self._length = _length
+        self._width = _width
+
+    def mass(self):
+        return self._length * self._width
+
+
+class MassCount(Road):
+    def __init__(self, _length, _width, volume):
+        super().__init__(_length, _width)
+        self.volume = volume
+
+
+r = MassCount(25, 10000, 125)
+print(r.mass())
